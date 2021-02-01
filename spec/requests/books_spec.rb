@@ -4,8 +4,8 @@ describe 'Books API', type: :request do
   describe " GET /books" do  
     it 'returns all books' do
       FactoryBot.create(:book, title: 'AAA', author: 'AAA')
-      # FactoryBot.create(:book, title: 'The Catcher in the Rye', author: 'J. D. Salinger')
-
+      FactoryBot.create(:book, title: 'The Catcher in the Rye', author: 'J. D. Salinger')
+      
      get '/api/v1/books'
       expect(response).to have_http_status(:success) 
       expect(JSON.parse(response.body).size).to eq(2)

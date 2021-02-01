@@ -15,7 +15,7 @@ describe 'Books API', type: :request do
     end
     
     describe 'POST /books' do
-      it 'create a new book' do .
+      it 'create a new book' do
 
         post '/api/v1/books', params: { book: {title:'The Hunger Games', author:'Suzanne Collins'}  }
         

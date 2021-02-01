@@ -6,9 +6,9 @@ module Api
         render json: Book.all 
       end
 
-      def cerate 
+      def create 
         book = Book.new (book_params)
-        if nook.save
+        if book.save
             render json: book, status: :created
         else
             render book.errors, status: :unprocessable_entity

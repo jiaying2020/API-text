@@ -10,18 +10,17 @@ describe 'Books API', type: :request do
          get '/api/v1/books'
     
          expect(response).to have_http_status(:success) 
-         expect(JSON.parse(response.body).size).to eq(2)
+         expect(JSON.parse(response.body).size).to eq(3)
       end
     end
     
     describe 'POST /books' do
-      it 'create a new book' do .
+      it 'create a new book' do
 
         post '/api/v1/books', params: { book: {title:'The Hunger Games', author:'Suzanne Collins'}  }
         
         expect(response).to have_http_status(:created)  
       end 
     end
-    
 
 end
